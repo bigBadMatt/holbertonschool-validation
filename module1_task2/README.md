@@ -57,3 +57,15 @@ This section describes the different steps involved in working with the website:
 3. Use the Makefile to perform various tasks:
    - Run `make help` to display a list of available targets and their descriptions.
    - Run other `make` commands as needed, such as `make cook` to prepare a meal in the current kitchen (just an example).
+
+# Using the make file:
+
+The Makefile contains the following commands: To run the make file use the make <command>
+
+build: Builds a new version of the website to the /dist/ folder
+
+clean: Removes the contents of the /dist/ folder.
+
+help: Prints out information of the commands to the terminal.
+
+post: Creates a new post in the contents/post folder with POST_TITLE and POST_NAME set from the ENV variables.
