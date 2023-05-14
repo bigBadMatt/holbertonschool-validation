@@ -1,0 +1,24 @@
+EXE_NAME = awesome-api
+SRC = main.go
+
+
+default: help
+
+help:	## Show this help usage
+	@fgrep -h "##" $(MAKEFILE_LIST) | grep -v fgrep | sed 's/:[[:blank:]]*##/:/'
+
+build: ## Build awesome-api
+	go build -o awesome-api
+
+run: ## Run awesome-api application
+	./awesome-api >./awesome-api.log 2>&1 &
+
+.PHONY : stop clean
+stop: ## Stop awesome-api application
+	kill $$(pgrep awesome-api) || true
+
+clean: stop ## Clean awesome-api application and log
+	rm -f awesome-api awesome-api.log
+
+test:	## Testing the port 9999 awesome api with curl
+	@curl http://localhost:9999/health ; echo "" ; curl http://localhost:9999
