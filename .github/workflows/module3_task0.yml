@@ -9,12 +9,13 @@ on:
 jobs:
   module3_task0:
     runs-on: ubuntu-22.04
-    
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
 
       - name: cd make help
-        run:|
+        run: |
           cd module3_task0
-	  make help
+          make help
+	  
