@@ -21,12 +21,16 @@ jobs:
           sudo ./setup.sh
       - name: Run all those makefile commands that I spent ages making
         run: |
-          cd module3_task1
-          make help
+          cd module3_task2
           make build
           make run
-          make stop
+          make validate
+          make integration-tests
+          make unit-tests
+          make package
+          make post
           make clean
+          make help
 
       - name: create zip file with make package
         run: |
