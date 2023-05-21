@@ -1,4 +1,4 @@
-GO=go
+fGO=go
 TARGET=awesome-api
 RM=rm -rf
 MAKE=make
@@ -47,5 +47,5 @@ check:	## Lint markdonw source, check dead links
 validate:	## Validate the file dist/index.html using the command line Holberton’s W3C Validator.
 	python3 /opt/W3C-Validator/w3c_validator.py ./dist/index.html || true
 
-help:	## Show this help usage.
-	@sed -ne '/@sed/!s/## //p' $(MAKEFILE_LIST)
+help: ## Display what each command does
+	cat Makefile | grep '##' | tr -d '##' | head -n -1
