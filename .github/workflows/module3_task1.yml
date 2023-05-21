@@ -17,13 +17,12 @@ jobs:
       - name: run setup.sh
         run: |
           cd module3_task1
-	  chmod u+x setup.sh
+          chmod u+x setup.sh
           sudo ./setup.sh
       - name: Run all those makefile commands that I spent ages making
         run: |
-	  make help
-	  make build
-	  make run
-	  make stop
-	  make cleak
-	working-directory: module3_task1
+          make help
+          make build
+          make run
+          make stop
+          make clean
