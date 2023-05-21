@@ -21,6 +21,8 @@ jobs:
           sudo ./setup.sh
       - name: Run all those makefile commands that I spent ages making
         run: |
+	  cd module3_task1
+	  make help
           make build
           make run
           make stop
